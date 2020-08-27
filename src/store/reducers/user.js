@@ -1,12 +1,20 @@
 const initialstate = {
+    user: {
+
+    },
+    loginStatus: false
 
 }
 
 const userReducer = (state = initialstate, action) => {
     switch (action.type) {
-        case "not":
+        case "GOOGLE_SIGN_IN":
 
-            break;
+            return {
+                ...state,
+                user: action.user,
+                loginStatus: true
+            }
 
         default:
             return state;
