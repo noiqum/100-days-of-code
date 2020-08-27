@@ -1,9 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Dosis:wght@400;700&display=swap");
+.head {
+  width: 100%;
+  height: 30vh;
+  background-color: var(--purple);
+  color: var(--lila);
+  font-family: "Dosis", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem; }
+  @media screen and (min-width: 980px) {
+    .head {
+      background-color: transparent;
+      height: 50vh; } }
+  .head h1 {
+    font-size: 5rem;
+    font-family: inherit;
+    text-transform: capitalize;
+    flex: 1; }
+  .head > svg {
+    display: none; }
+    @media screen and (min-width: 600px) {
+      .head > svg {
+        display: inline-block;
+        flex: 2;
+        max-width: 70%;
+        max-height: 90%; } }
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 5%;
+  background-color: var(--purple);
+  color: var(--lila); }
+  @media screen and (min-width: 980px) {
+    .navbar {
+      background-color: transparent; } }
+  .navbar nav {
+    display: inline-block;
+    width: 50%; }
+    .navbar nav ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5px;
+      margin-right: 1rem; }
+      .navbar nav ul li {
+        border: 1px solid var(--lila);
+        border-radius: 3px;
+        padding: 3px 7px;
+        list-style: none;
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        margin-right: 1rem; }
+        @media screen and (min-width: 600px) {
+          .navbar nav ul li {
+            font-size: 2rem; } }
+        @media screen and (min-width: 980px) {
+          .navbar nav ul li {
+            font-size: 2.5rem;
+            margin-right: 2rem;
+            padding: 3px 10px; } }
+        .navbar nav ul li:hover {
+          background-color: var(--lila);
+          color: var(--purple); }
+        .navbar nav ul li:active {
+          transform: translateY(3px); }
+
 *,
 html,
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 10px; }
 
 :root {
   --purple: #342791;

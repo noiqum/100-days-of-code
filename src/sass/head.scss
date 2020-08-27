@@ -1,0 +1,30 @@
+.head {
+  width: 100%;
+  height: 30vh;
+  background-color: var(--purple);
+  color: var(--lila);
+  font-family: "Dosis", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  @media screen and (min-width: 980px) {
+    background-color: transparent;
+    height: 50vh;
+  }
+  & h1 {
+    font-size: 5rem;
+    font-family: inherit;
+    text-transform: capitalize;
+    flex: 1;
+  }
+  & > svg {
+    display: none;
+    @media screen and (min-width: 600px) {
+      display: inline-block;
+      flex: 2;
+      max-width: 70%;
+      max-height: 90%;
+    }
+  }
+}
