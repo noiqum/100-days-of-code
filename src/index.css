@@ -83,6 +83,134 @@
         .navbar nav ul li:active {
           transform: translateY(3px); }
 
+.signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem; }
+  @media screen and (min-width: 800px) {
+    .signin {
+      flex-direction: row;
+      background-color: var(--purple); } }
+  .signin__img {
+    display: none; }
+    @media screen and (min-width: 800px) {
+      .signin__img {
+        display: inline-block;
+        background: -moz-linear-gradient(135deg, rgba(51, 39, 145, 0.478) 0, #342791 100%), url("./sass/img/start.jpg") no-repeat;
+        background: -webkit-gradient(135deg, rgba(51, 39, 145, 0.478) 0, #342791 100%), url("./sass/img/start.jpg") no-repeat;
+        background: -webkit-linear-gradient(135deg, rgba(51, 39, 145, 0.478) 0, #342791 100%), url("./sass/img/start.jpg") no-repeat;
+        background: -o-linear-gradient(135deg, rgba(51, 39, 145, 0.478) 0, #342791 100%), url("./sass/img/start.jpg") no-repeat;
+        background: -ms-linear-gradient(135deg, rgba(51, 39, 145, 0.478) 0, #342791 100%), url("./sass/img/start.jpg") no-repeat;
+        background: linear-gradient(135deg, rgba(51, 39, 145, 0.478) 0, #342791 100%), url("./sass/img/start.jpg") no-repeat;
+        width: 40rem;
+        height: 50rem; } }
+  .signin > svg {
+    width: 100%;
+    height: 20rem; }
+    @media screen and (min-width: 600px) {
+      .signin > svg {
+        display: none; } }
+  .signin h2 {
+    font-size: 3rem;
+    color: var(--purple);
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    margin-top: 4rem; }
+  .signin form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 80%;
+    padding-bottom: 5rem; }
+    @media screen and (min-width: 670px) {
+      .signin form {
+        min-width: 40%; } }
+    .signin form > button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      padding: 5px 0;
+      border-radius: 3px;
+      border: none;
+      border: 1px solid var(--purple); }
+      @media screen and (min-width: 1100px) {
+        .signin form > button {
+          width: 50%; } }
+      .signin form > button:active {
+        transform: translateY(3px); }
+      .signin form > button svg {
+        width: 3rem;
+        height: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem; }
+      .signin form > button span {
+        font-size: 1.5rem;
+        color: var(--purple); }
+    .signin form > span {
+      font-size: 2.5rem;
+      margin: 1rem;
+      color: var(--purple); }
+      @media screen and (min-width: 800px) {
+        .signin form > span {
+          color: var(--white); } }
+    .signin form > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-width: 80%; }
+      .signin form > div > input {
+        width: 100%;
+        padding: 9px;
+        border-radius: 3px;
+        border: none;
+        border: 1px solid var(--purple);
+        font-size: 1.5rem; }
+        @media screen and (min-width: 1100px) {
+          .signin form > div > input {
+            width: 30rem; } }
+      .signin form > div > label {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+        color: var(--purple); }
+        @media screen and (min-width: 800px) {
+          .signin form > div > label {
+            color: var(--white);
+            font-size: 2.3rem;
+            letter-spacing: 2px; } }
+      .signin form > div > input[type="submit"] {
+        padding: 5px 1rem;
+        width: 100%;
+        background-color: var(--lila);
+        color: var(--white);
+        border: none;
+        border-radius: 3px;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        padding: 9px 0;
+        border: 1px solid transparent;
+        letter-spacing: 2px; }
+        .signin form > div > input[type="submit"]:hover {
+          background-color: var(--purple);
+          border: 1px solid var(--purple); }
+        .signin form > div > input[type="submit"]:active {
+          transform: translateY(3px); }
+        @media screen and (min-width: 800px) {
+          .signin form > div > input[type="submit"] {
+            margin-top: 2rem; }
+            .signin form > div > input[type="submit"]:hover {
+              background-color: var(--black); } }
+        @media screen and (min-width: 1100px) {
+          .signin form > div > input[type="submit"] {
+            width: 30rem;
+            padding: 12px 0; } }
+
 *,
 html,
 body {
