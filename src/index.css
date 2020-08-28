@@ -37,6 +37,18 @@
   @media screen and (min-width: 980px) {
     .navbar {
       background-color: transparent; } }
+  .navbar__login span {
+    font-size: 1.5rem;
+    margin-right: 1rem; }
+    @media screen and (min-width: 600px) {
+      .navbar__login span {
+        font-size: 2.5rem; } }
+  .navbar__login > a {
+    border: 1px solid var(--lila);
+    border-radius: 3px;
+    padding: 3px; }
+    .navbar__login > a:hover {
+      background-color: var(--black); }
   .navbar__logo svg {
     display: inline-block;
     width: 5rem;

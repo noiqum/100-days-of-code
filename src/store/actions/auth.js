@@ -8,6 +8,7 @@ export const googleSignIn = (user) => ({
 })
 
 
+
 export const googleSign = () => {
     return async dispatch => {
         try {
@@ -15,6 +16,23 @@ export const googleSign = () => {
             const user = result.user;
             console.log(user);
             return dispatch(googleSignIn(user));
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const logout = () => {
+    return {
+        type: actionTypes.logout
+    }
+}
+
+export const logoutHandler = () => {
+    return async dispatch => {
+        try {
+            await firebase.auth().signOut();
+            return dispatch(logout());
         } catch (error) {
             console.log(error)
         }
