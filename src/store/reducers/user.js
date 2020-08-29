@@ -3,7 +3,7 @@ import actionTypes from '../actions/actionTypes';
 
 const initialstate = {
     user: {
-
+        uid: 'default'
     },
     loginStatus: false
 

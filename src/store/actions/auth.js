@@ -14,7 +14,7 @@ export const googleSign = () => {
         try {
             const result = await firebase.auth().signInWithPopup(provider);
             const user = result.user;
-            console.log(user);
+
             return dispatch(googleSignIn(user));
         } catch (error) {
             console.log(error)
