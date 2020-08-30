@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { updateTask } from "../../store/actions/path";
 
-function Task({ task, loginStatus }) {
+function Task({ task, loginStatus, setTask, user, count, index }) {
   const [link, setLink] = useState({});
   const linkRef = useRef(null);
   useEffect(() => {
@@ -11,6 +11,7 @@ function Task({ task, loginStatus }) {
 
   const linkHandler = () => {
     setLink({ ...link, done: !link.done });
+    setTask(user, count, index);
   };
 
   return (
@@ -19,22 +20,20 @@ function Task({ task, loginStatus }) {
         link
       </a>
       <input ref={linkRef} type="checkbox" id="link" />
-      {
-        //   loginStatus
-        true && (
-          <label
-            htmlFor="link"
-            className={link.done ? "task__label done" : "task__label"}
-            onClick={linkHandler}
-          ></label>
-        )
-      }
+      {loginStatus && (
+        <label
+          htmlFor="link"
+          className={link.done ? "task__label done" : "task__label"}
+          onClick={linkHandler}
+        ></label>
+      )}
     </div>
   );
 }
 const mapState = (state) => {
   return {
-    loginStatus: state.user.user.loginStatus,
+    loginStatus: state.user.loginStatus,
+    user: state.user.user.uid,
   };
 };
 const mapDispatch = (dispatch) => {

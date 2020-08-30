@@ -10,7 +10,7 @@ function Card({ count, tasks, title }) {
       <div className="card__task">
         {tasks.length} {tasks.length > 1 ? "tasks" : "task"}
       </div>
-      {<Tasks tasks={tasks} />}
+      {<Tasks tasks={tasks} count={count} />}
     </div>
   );
 }

@@ -14,7 +14,8 @@ const pathReducer = (state = initialState, action) => {
                 ...state,
                 days: action.path
             }
-
+        case actionTypes.setTask:
+            return state;
         default:
             return state;
     }
