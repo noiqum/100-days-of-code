@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getPath } from "../../store/actions/path";
 import Card from "../card/card";
+import { AnimatePresence } from "framer-motion";
 // import { record } from "../../path/path";
 //style=container.scss
 
@@ -24,17 +25,19 @@ function Container({ getPathDB, loginStatus, user, days }) {
   return (
     <div className="day-list">
       {loading && <p>loading</p>}
-      {days !== [] &&
-        days.map((day) => {
-          return (
-            <Card
-              key={day.day}
-              count={day.day}
-              title={day.title}
-              tasks={day.links}
-            />
-          );
-        })}
+      <AnimatePresence>
+        {days !== [] &&
+          days.map((day) => {
+            return (
+              <Card
+                key={day.day}
+                count={day.day}
+                title={day.title}
+                tasks={day.links}
+              />
+            );
+          })}
+      </AnimatePresence>
     </div>
   );
 }
