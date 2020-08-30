@@ -1,0 +1,37 @@
+.card {
+  background: #f6f6ff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px rgba(98, 127, 232, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-width: 24rem;
+  &__count {
+    font: 8rem "Audiowide";
+    position: absolute;
+    right: 0.8rem;
+    top: 0.5rem;
+    color: #d9deff;
+    text-shadow: 2px 2px 0px #f5f5ff, 2px 2.3px 0px #d5dafe,
+      2px 3px 5px rgba(155, 168, 239, 0.5);
+    @media screen and (min-width: 440px) {
+      font-size: 5rem;
+    }
+  }
+  &__title {
+    font-size: 3.5rem;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--purple);
+    position: relative;
+    z-index: 2;
+  }
+  &__task {
+    font-size: 2rem;
+    color: var(--red);
+  }
+}

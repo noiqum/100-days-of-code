@@ -1,0 +1,35 @@
+.tasks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  & > a {
+    text-decoration: none;
+    color: var(--purple);
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  & input {
+    display: none;
+  }
+
+  &__label {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    border: 1px solid var(--purple);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    &.done {
+      background-color: var(--blue);
+    }
+  }
+}

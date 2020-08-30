@@ -1,10 +1,12 @@
 import React from "react";
+import Task from "./task";
+// sytle=task.scss
 
 function Tasks({ tasks }) {
   return (
-    <div>
+    <div className="tasks">
       {tasks.map((task) => {
-        return <div>{task}</div>;
+        return <Task task={task} />;
       })}
     </div>
   );

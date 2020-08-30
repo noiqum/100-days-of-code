@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getPath } from "../../store/actions/path";
+import Card from "../card/card";
 // import { record } from "../../path/path";
 //style=container.scss
 
@@ -12,22 +13,27 @@ function Container({ getPathDB, loginStatus, user, days }) {
     if (loginStatus) {
       getPathDB(user).then(() => {
         setLoading(false);
-        setDaysArray(days);
       });
     } else {
       getPathDB("default").then(() => {
         setLoading(false);
-        setDaysArray(days);
       });
     }
-  }, [loginStatus, days]);
+  }, [loginStatus]);
 
   return (
     <div className="day-list">
       {loading && <p>loading</p>}
-      {daysArray !== [] &&
-        daysArray.map((day) => {
-          return <div>{day.title}</div>;
+      {days !== [] &&
+        days.map((day) => {
+          return (
+            <Card
+              key={day.day}
+              count={day.day}
+              title={day.title}
+              tasks={day.links}
+            />
+          );
         })}
     </div>
   );

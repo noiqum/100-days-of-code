@@ -1,6 +1,6 @@
 import firebase from '../firebaseConfig/firebaseConfig';
 
-const path = [
+export const path = [
     {
         day: 1, title: 'html', links: [
             { source: 'https://bento.io/topic/html', done: false }

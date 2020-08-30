@@ -19,9 +19,19 @@ export const getPath = (user) => {
                 return dispatch(setPath(path))
             } else {
                 const result = await firebase.firestore().collection('user').doc(user).get();
-                const path = result.data();
-                return dispatch(setPath(path))
+                const userInfo = result.data();
+                return dispatch(setPath(userInfo.path))
             }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const updateTask = (user, day, linkIndex) => {
+    return async dispatch => {
+        try {
+
         } catch (error) {
             console.log(error)
         }
