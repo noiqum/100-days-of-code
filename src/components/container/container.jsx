@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { getPath } from "../../store/actions/path";
 import Card from "../card/card";
 import { AnimatePresence } from "framer-motion";
-// import { record } from "../../path/path";
+import { record } from "../../path/path";
+import { checkCardFinish } from "../utils/utils";
 //style=container.scss
 
 function Container({ getPathDB, loginStatus, user, days }) {
@@ -20,6 +21,7 @@ function Container({ getPathDB, loginStatus, user, days }) {
         setLoading(false);
       });
     }
+    record();
   }, [loginStatus]);
 
   return (
@@ -34,6 +36,7 @@ function Container({ getPathDB, loginStatus, user, days }) {
                 count={day.day}
                 title={day.title}
                 tasks={day.links}
+                finished={checkCardFinish(day)}
               />
             );
           })}

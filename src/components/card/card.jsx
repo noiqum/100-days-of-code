@@ -3,7 +3,7 @@ import Tasks from "./tasks";
 import { motion } from "framer-motion";
 //style=card.scss
 
-function Card({ count, tasks, title }) {
+function Card({ count, tasks, title, finished }) {
   const variants = {
     visible: {
       opacity: 1,
@@ -24,7 +24,7 @@ function Card({ count, tasks, title }) {
       animate="visible"
       variants={variants}
       initial="hidden"
-      className="card"
+      className={finished ? "card done" : "card"}
     >
       <div className="card__count">{count}</div>
       <div className="card__title">{title}</div>

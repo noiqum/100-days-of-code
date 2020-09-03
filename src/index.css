@@ -253,7 +253,7 @@
       .card__count {
         font-size: 5rem; } }
   .card__title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     display: inline-block;
     text-transform: uppercase;
     color: var(--purple);
@@ -262,6 +262,11 @@
   .card__task {
     font-size: 2rem;
     color: var(--red); }
+  .card.done {
+    background-color: var(--yellow);
+    transition: background-color 2s; }
+    .card.done > .card__count {
+      color: var(--purple); }
 
 .tasks {
   display: flex;

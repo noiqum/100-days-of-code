@@ -39,7 +39,7 @@ export const updateTask = (user, day, linkIndex) => {
             const path = userInfo.data().path;
             const newLinks = pathItem.links.map((link, index) => {
                 if (index === linkIndex) {
-                    return { ...link, done: true }
+                    return { ...link, done: !link.done }
                 } else {
                     return link
                 }

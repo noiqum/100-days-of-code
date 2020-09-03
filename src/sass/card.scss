@@ -23,7 +23,7 @@
     }
   }
   &__title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     display: inline-block;
     text-transform: uppercase;
     color: var(--purple);
@@ -33,5 +33,13 @@
   &__task {
     font-size: 2rem;
     color: var(--red);
+  }
+  &.done {
+    // background-color: rgba(51, 39, 145, 0.4);
+    background-color: var(--yellow);
+    transition: background-color 2s;
+    & > .card__count {
+      color: var(--purple);
+    }
   }
 }

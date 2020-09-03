@@ -90,11 +90,59 @@ export const path = [
             { source: 'https://www.youtube.com/watch?v=T-slCsOrLcc&list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG', done: false }
         ]
     },
+    {
+        day: 17, title: 'JavaScript', links: [
+            { source: 'https://www.youtube.com/watch?v=ei2HLyHwt-k', done: false },
+
+        ]
+    },
+    {
+        day: 18, title: 'JavaScript', links: [
+            { source: 'https://www.freecodecamp.org/learn', done: false },
+
+        ]
+    },
+    {
+        day: 19, title: 'JavaScript', links: [
+            { source: 'https://watchandcode.com/p/practical-javascript', done: false },
+
+        ]
+    },
+    {
+        day: 20, title: 'JavaScript', links: [
+            { source: 'https://watchandcode.com/p/practical-javascript', done: false },
+
+        ]
+    },
+    {
+        day: 21, title: 'JavaScript', links: [
+            { source: 'https://www.sololearn.com/Course/JavaScript/', done: false },
+
+        ]
+    },
+    {
+        day: 22, title: 'JavaScript', links: [
+            { source: 'https://www.sololearn.com/Course/JavaScript/', done: false },
+
+        ]
+    },
+    {
+        day: 23, title: 'JavaScript', links: [
+            { source: 'https://www.theodinproject.com/courses/javascript/lessons/todo-list', done: false },
+
+        ]
+    },
+    {
+        day: 24, title: 'JavaScript', links: [
+            { source: 'https://www.theodinproject.com/courses/javascript/lessons/todo-list', done: false },
+
+        ]
+    },
 
 ]
 
 export const record = () => {
-    firebase.firestore().collection('path').doc('default').set({ path }).then(() => {
+    firebase.firestore().collection('path').doc('default').set({ path }, { merge: true }).then(() => {
         console.log('path is recorded')
     }).catch(err => {
         console.log(err)
