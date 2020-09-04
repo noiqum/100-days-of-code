@@ -140,7 +140,10 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-top: 2rem;
-
+      cursor: pointer;
+      &:hover {
+        background-color: var(--black);
+      }
       @media screen and(min-width:600px) {
         width: 30%;
         margin-left: auto;
@@ -148,6 +151,48 @@
       @media screen and(min-width:1260px) {
         width: max-content;
         padding: 1rem 1.8rem;
+      }
+    }
+    &__google {
+      & > button {
+        cursor: pointer;
+        width: 100%;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 1rem;
+        background-color: var(--white);
+        border: none;
+        border-radius: 5px;
+        margin-left: auto;
+        color: var(--purple);
+        @media screen and (min-width: 600px) {
+          width: 70%;
+        }
+        @media screen and(min-width:1260px) {
+          padding: 12px;
+        }
+        & > svg {
+          width: 3rem;
+          height: 3rem;
+        }
+        & > span {
+          font-size: 1.3rem;
+          @media screen and(min-width:1260px) {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+    & > span {
+      font-size: 2rem;
+      text-align: center;
+      display: block;
+      padding: 12px;
+      color: var(--purple);
+      @media screen and(min-width:1260px) {
+        font-size: 2.3rem;
       }
     }
   }

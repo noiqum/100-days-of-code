@@ -401,7 +401,10 @@
       font-size: 2rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-top: 2rem; }
+      margin-top: 2rem;
+      cursor: pointer; }
+      .signup__form input[type="submit"]:hover {
+        background-color: var(--black); }
       @media screen and (min-width: 600px) {
         .signup__form input[type="submit"] {
           width: 30%;
@@ -410,6 +413,42 @@
         .signup__form input[type="submit"] {
           width: max-content;
           padding: 1rem 1.8rem; } }
+    .signup__form__google > button {
+      cursor: pointer;
+      width: 100%;
+      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 1rem;
+      background-color: var(--white);
+      border: none;
+      border-radius: 5px;
+      margin-left: auto;
+      color: var(--purple); }
+      @media screen and (min-width: 600px) {
+        .signup__form__google > button {
+          width: 70%; } }
+      @media screen and (min-width: 1260px) {
+        .signup__form__google > button {
+          padding: 12px; } }
+      .signup__form__google > button > svg {
+        width: 3rem;
+        height: 3rem; }
+      .signup__form__google > button > span {
+        font-size: 1.3rem; }
+        @media screen and (min-width: 1260px) {
+          .signup__form__google > button > span {
+            font-size: 1.8rem; } }
+    .signup__form > span {
+      font-size: 2rem;
+      text-align: center;
+      display: block;
+      padding: 12px;
+      color: var(--purple); }
+      @media screen and (min-width: 1260px) {
+        .signup__form > span {
+          font-size: 2.3rem; } }
 
 *,
 html,
