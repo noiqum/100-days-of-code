@@ -12,7 +12,9 @@ function Navbar({ login, user, logoutClick }) {
   return (
     <div className="navbar">
       <div className="navbar__logo">
-        <SvgLogo />
+        <Link to="/">
+          <SvgLogo />
+        </Link>
       </div>
       <nav>
         {login ? (
