@@ -5,7 +5,8 @@ const actionTypes = {
     logout: 'LOG_OUT',
     getPath: 'GET_PATH',
     setTask: 'SET_TASK',
-    googleSignUp: "GOOGLE_SIGN_UP"
+    googleSignUp: "GOOGLE_SIGN_UP",
+    signUp: 'SIGN_UP'
 
 }
 

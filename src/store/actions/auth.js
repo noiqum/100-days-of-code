@@ -50,3 +50,13 @@ export const logoutHandler = () => {
         }
     }
 }
+
+export const signUpHandle = () => {
+    return dispatch => {
+        try {
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}

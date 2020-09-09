@@ -357,12 +357,15 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      position: relative; }
       @media screen and (min-width: 600px) {
         .signup__form > div {
           flex-direction: row;
           justify-content: space-between;
           margin-bottom: 1rem; } }
+      .signup__form > div.danger > input {
+        border: 2px solid red; }
       .signup__form > div > input {
         display: block;
         width: 100%;
@@ -375,10 +378,32 @@
         color: var(--purple); }
         @media screen and (min-width: 600px) {
           .signup__form > div > input {
-            width: 70%; } }
+            width: 70%;
+            margin-bottom: 1.3rem; } }
         @media screen and (min-width: 1260px) {
           .signup__form > div > input {
-            padding: 18px; } }
+            padding: 14px;
+            margin-bottom: 1rem; } }
+        .signup__form > div > input + small {
+          position: absolute;
+          display: block;
+          width: 70%;
+          margin-top: 5px;
+          left: 12px;
+          font-size: 1.5rem;
+          top: 95%;
+          color: red; }
+          @media screen and (min-width: 600px) {
+            .signup__form > div > input + small {
+              width: 70%;
+              left: 30%;
+              top: 78%; } }
+          @media screen and (min-width: 1260px) {
+            .signup__form > div > input + small {
+              left: 30%;
+              top: 82%;
+              font-size: 1.8rem;
+              padding: 0 14px; } }
       .signup__form > div > label {
         color: var(--purple);
         font-size: 2rem;

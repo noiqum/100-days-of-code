@@ -3,16 +3,24 @@ import { ReactComponent as SvgGoogle } from "../../sass/svg/google.svg";
 import { connect } from "react-redux";
 import { googleSign } from "../../store/actions/auth";
 import { Redirect } from "react-router-dom";
+import useForm from "../hooks/useForm";
+import { validate } from "../utils/utils";
 
 function SignUp({ googleLogin, loginStatus }) {
   const [login, setLogin] = useState(false);
 
+  const signupHandler = () => {
+    console.log(values);
+  };
+
+  const { values, errors, submitHandler, changeHandler } = useForm(
+    signupHandler,
+    validate
+  );
   useEffect(() => {
     setLogin(loginStatus);
   }, [loginStatus]);
-  const submitHandler = (e) => {
-    e.preventDefault();
-  };
+
   const googleHandler = () => {
     googleLogin();
   };
@@ -33,22 +41,57 @@ function SignUp({ googleLogin, loginStatus }) {
             </button>
           </div>
           <span>Or</span>
-          <div className="signup__form__name">
+          <div
+            className={
+              errors.name ? "signup__form__name danger" : "signup__form__name"
+            }
+          >
             <label htmlFor="name">Display Name</label>
-            <input name="name" type="text" />
+            <input
+              name="name"
+              type="text"
+              placeholder="At least 3 characters long"
+              onChange={changeHandler}
+            />
+            {errors.name && <small>{errors.name}</small>}
           </div>
-          <div className="signup__form__email">
+          <div
+            className={
+              errors.email
+                ? "signup__form__email danger"
+                : "signup__form__email"
+            }
+          >
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              onChange={changeHandler}
+            />
+            {errors.email && <small>{errors.email}</small>}
           </div>
           <div className="signup__form__password">
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" />
+            <input
+              type="password"
+              name="password"
+              placeholder="min 8 characters"
+              onChange={changeHandler}
+            />
+            {errors.password && <small>{errors.password}</small>}
           </div>
           <div className="signup__form__password2">
             <label htmlFor="password2">Password Repeat</label>
-            <input type="password" />
+            <input
+              type="password"
+              name="password2"
+              onChange={changeHandler}
+              placeholder="repeat password"
+            />
+            {errors.password2 && <small>{errors.password2}</small>}
           </div>
+
           <div className="signup__form__submit">
             <input type="submit" value="Register" />
           </div>

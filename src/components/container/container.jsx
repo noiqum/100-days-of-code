@@ -21,7 +21,7 @@ function Container({ getPathDB, loginStatus, user, days }) {
         setLoading(false);
       });
     }
-    record();
+    // record();
   }, [loginStatus]);
 
   return (
