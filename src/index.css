@@ -479,6 +479,12 @@
         .signup__form > span {
           font-size: 2.3rem; } }
 
+.loading {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center; }
+
 *,
 html,
 body {

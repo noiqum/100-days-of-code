@@ -5,6 +5,7 @@ import Card from "../card/card";
 import { AnimatePresence } from "framer-motion";
 import { record } from "../../path/path";
 import { checkCardFinish } from "../utils/utils";
+import Loading from "../loading/loading";
 //style=container.scss
 
 function Container({ getPathDB, loginStatus, user, days }) {
@@ -24,25 +25,28 @@ function Container({ getPathDB, loginStatus, user, days }) {
     // record();
   }, [loginStatus]);
 
-  return (
-    <div className="day-list">
-      {loading && <p>loading</p>}
-      <AnimatePresence>
-        {days !== [] &&
-          days.map((day) => {
-            return (
-              <Card
-                key={day.day}
-                count={day.day}
-                title={day.title}
-                tasks={day.links}
-                finished={checkCardFinish(day)}
-              />
-            );
-          })}
-      </AnimatePresence>
-    </div>
-  );
+  if (loading) {
+    return <Loading />;
+  } else {
+    return (
+      <div className="day-list">
+        <AnimatePresence>
+          {days !== [] &&
+            days.map((day) => {
+              return (
+                <Card
+                  key={day.day}
+                  count={day.day}
+                  title={day.title}
+                  tasks={day.links}
+                  finished={checkCardFinish(day)}
+                />
+              );
+            })}
+        </AnimatePresence>
+      </div>
+    );
+  }
 }
 
 const mapState = (state) => {
