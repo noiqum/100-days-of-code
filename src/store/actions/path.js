@@ -21,6 +21,7 @@ export const getPath = (user) => {
             } else {
                 const result = await firebase.firestore().collection('user').doc(user).get();
                 const userInfo = result.data();
+                console.log(userInfo)
                 return dispatch(setPath(userInfo.path))
             }
         } catch (error) {

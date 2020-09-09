@@ -18,6 +18,12 @@ const userReducer = (state = initialstate, action) => {
                 user: action.user,
                 loginStatus: true
             }
+        case actionTypes.signUp:
+            return {
+                ...state,
+                user: action.user,
+                loginStatus: true
+            }
         case actionTypes.logout:
 
             return {

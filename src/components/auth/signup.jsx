@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { ReactComponent as SvgGoogle } from "../../sass/svg/google.svg";
 import { connect } from "react-redux";
-import { googleSign } from "../../store/actions/auth";
+import { googleSign, signUpHandle } from "../../store/actions/auth";
 import { Redirect } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { validate } from "../utils/utils";
 
-function SignUp({ googleLogin, loginStatus }) {
+function SignUp({ googleLogin, loginStatus, register }) {
   const [login, setLogin] = useState(false);
 
   const signupHandler = () => {
-    console.log(values);
+    const { name, email, password } = values;
+    const user = {
+      displayName: name,
+      email,
+      password,
+    };
+    register(user);
   };
 
   const { values, errors, submitHandler, changeHandler } = useForm(
@@ -108,6 +114,9 @@ const mapDispatch = (dispatch) => {
   return {
     googleLogin: () => {
       dispatch(googleSign());
+    },
+    register: (user) => {
+      dispatch(signUpHandle(user));
     },
   };
 };

@@ -430,6 +430,8 @@
       cursor: pointer; }
       .signup__form input[type="submit"]:hover {
         background-color: var(--black); }
+      .signup__form input[type="submit"]:active {
+        transform: translateY(3px); }
       @media screen and (min-width: 600px) {
         .signup__form input[type="submit"] {
           width: 30%;

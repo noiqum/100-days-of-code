@@ -51,12 +51,27 @@ export const logoutHandler = () => {
     }
 }
 
-export const signUpHandle = () => {
-    return dispatch => {
+const signUp = (user) => {
+    return {
+        type: actionTypes.signUp,
+        user
+    }
+}
+
+
+
+export const signUpHandle = (user) => {
+    return async dispatch => {
         try {
+            const result = await firebase.auth().createUserWithEmailAndPassword(user.email, user.password);
+            const id = result.user.uid;
+            const newUser = { displayName: user.displayName, email: user.email, uid: id, path };
+            await firebase.firestore().collection('user').doc(id).set({ ...newUser })
+            return dispatch(signUp(newUser))
 
         } catch (error) {
             console.log(error)
+
         }
     }
 }
