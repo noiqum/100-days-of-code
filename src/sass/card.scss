@@ -42,4 +42,12 @@
       color: var(--purple);
     }
   }
+  &__tweet {
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--purple);
+  }
 }
