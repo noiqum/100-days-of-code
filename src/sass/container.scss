@@ -5,3 +5,11 @@
   grid-gap: 12px;
   padding: 8vw;
 }
+
+.Toastify {
+  &__toast {
+    &-body {
+      font-size: 2rem;
+    }
+  }
+}

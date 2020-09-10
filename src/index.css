@@ -230,6 +230,9 @@
   grid-gap: 12px;
   padding: 8vw; }
 
+.Toastify__toast-body {
+  font-size: 2rem; }
+
 .card {
   background: #f6f6ff;
   border-radius: 10px;

@@ -1,5 +1,6 @@
 import actionTypes from './actionTypes';
 import firebase from '../../firebaseConfig/firebaseConfig';
+import { toast } from 'react-toastify';
 
 
 
@@ -35,6 +36,7 @@ const setTask = () => ({
 export const updateTask = (user, day, linkIndex) => {
     return async dispatch => {
         try {
+            toast.success('⭐ keep going 💪')
             const userInfo = await firebase.firestore().doc(`user/${user}`).get();
             const pathItem = userInfo.data().path[day - 1];
             const path = userInfo.data().path;
@@ -47,12 +49,9 @@ export const updateTask = (user, day, linkIndex) => {
             });
             const updatedPathItem = { ...pathItem, links: newLinks };
             path.splice((day - 1), 1, updatedPathItem)
-
-            // await firebase.firestore().doc(`user/${user}`).update({
-            //     path: firebase.firestore.FieldValue.arrayUnion({ updatedPathItem })
-            // })
             await firebase.firestore().doc(`user/${user}`).update({ path: path })
-            return dispatch(setTask())
+            return dispatch(getPath(user))
+            // return dispatch(setTask())
         } catch (error) {
             console.log(error)
         }
