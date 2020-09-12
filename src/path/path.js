@@ -405,231 +405,233 @@ export const path = [
     },
     {
         day: 68, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://scrimba.com/g/glearnreact', done: false },
 
 
         ]
     },
     {
         day: 69, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://scrimba.com/g/glearnreact', done: false },
 
 
         ]
     },
     {
         day: 70, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://www.freecodecamp.org/learn/front-end-libraries/react/', done: false },
 
 
         ]
     },
     {
         day: 71, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://egghead.io/courses/the-beginner-s-guide-to-react', done: false },
 
 
         ]
     },
     {
         day: 72, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://www.youtube.com/watch?v=Ke90Tje7VS0', done: false },
 
 
         ]
     },
     {
         day: 73, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://www.youtube.com/watch?v=Ke90Tje7VS0', done: false },
 
 
         ]
     },
     {
         day: 74, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://www.codecademy.com/learn/react-101', done: false },
 
 
         ]
     },
     {
         day: 75, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://www.codecademy.com/learn/react-102', done: false },
 
 
         ]
     },
     {
         day: 76, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://upmostly.com/tutorials/react-hooks-simple-introduction', done: false },
 
 
         ]
     },
     {
         day: 77, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://upmostly.com/tutorials/build-a-todo-app-in-react-using-hooks', done: false },
 
 
         ]
     },
     {
         day: 78, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://upmostly.com/tutorials/build-a-react-timer-component-using-hooks', done: false },
 
 
         ]
     },
     {
         day: 79, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://reactjs.org/tutorial/tutorial.html', done: false },
 
 
         ]
     },
     {
         day: 80, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://www.rithmschool.com/courses#libraries', done: false },
 
 
         ]
     },
     {
         day: 81, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://www.newline.co/fullstack-react/react-daily-ui/003-landing-page/', done: false },
+            { source: 'https://www.newline.co/fullstack-react/react-daily-ui/002-checkout/', done: false }
 
 
         ]
     },
     {
         day: 82, title: 'react', links: [
-            { source: '', done: false },
+            { source: 'https://react.rocks/', done: false },
 
 
         ]
     },
     {
         day: 83, title: 'redux', links: [
-            { source: '', done: false },
+            { source: 'https://egghead.io/courses/getting-started-with-redux', done: false },
 
 
         ]
     },
     {
         day: 84, title: 'redux', links: [
-            { source: '', done: false },
+            { source: 'https://egghead.io/courses/building-react-applications-with-idiomatic-redux', done: false },
 
 
         ]
     },
     {
         day: 85, title: 'redux', links: [
-            { source: '', done: false },
+            { source: 'https://github.com/happypoulp/redux-tutorial', done: false },
 
 
         ]
     },
     {
         day: 86, title: 'redux', links: [
-            { source: '', done: false },
+            { source: 'https://www.freecodecamp.org/news/building-teslas-battery-range-calculator-with-react-part-2-redux-version-2ffe29018eec/', done: false },
 
 
         ]
     },
     {
         day: 87, title: 'redux', links: [
-            { source: '', done: false },
+            { source: 'https://spapas.github.io/2016/03/02/react-redux-tutorial/', done: false },
 
 
         ]
     },
     {
         day: 88, title: 'redux', links: [
-            { source: '', done: false },
+            { source: 'https://spapas.github.io/2016/03/02/react-redux-tutorial/', done: false },
 
 
         ]
     },
     {
         day: 89, title: 'jest', links: [
-            { source: '', done: false },
+            { source: 'https://auth0.com/blog/testing-react-applications-with-jest/', done: false },
 
 
         ]
     },
     {
         day: 90, title: 'jest', links: [
-            { source: '', done: false },
+            { source: 'https://blog.bitsrc.io/testing-your-react-app-with-puppeteer-and-jest-c72b3dfcde59', done: false },
 
 
         ]
     },
     {
         day: 91, title: 'jest', links: [
-            { source: '', done: false },
+            { source: 'https://www.youtube.com/watch?v=hT3j87FMR6M', done: false },
 
 
         ]
     },
     {
         day: 92, title: 'jest', links: [
-            { source: '', done: false },
+            { source: 'https://www.youtube.com/watch?v=hT3j87FMR6M', done: false },
 
 
         ]
     },
     {
         day: 93, title: 'jest', links: [
-            { source: '', done: false },
+            { source: 'https://create-react-app.dev/docs/running-tests/', done: false },
 
 
         ]
     },
     {
         day: 94, title: 'TypeScript', links: [
-            { source: '', done: false },
+            { source: 'https://ts.chibicode.com/todo/', done: false },
 
 
         ]
     },
     {
         day: 95, title: 'TypeScript', links: [
-            { source: '', done: false },
+            { source: 'https://www.typescriptlang.org/docs/handbook/basic-types.html', done: false },
+            { source: 'https://levelup.gitconnected.com/typescript-and-react-using-create-react-app-a-step-by-step-guide-to-setting-up-your-first-app-6deda70843a4', done: false }
 
 
         ]
     },
     {
         day: 96, title: 'TypeScript', links: [
-            { source: '', done: false },
+            { source: 'https://github.com/piotrwitek/react-redux-typescript-guide', done: false },
 
 
         ]
     },
     {
         day: 97, title: 'next js', links: [
-            { source: '', done: false },
+            { source: 'https://www.youtube.com/watch?v=IkOVe40Sy0U', done: false },
 
 
         ]
     },
     {
         day: 98, title: 'next js', links: [
-            { source: '', done: false },
+            { source: 'https://css-tricks.com/building-a-blog-with-next-js/', done: false },
 
 
         ]
     },
     {
         day: 99, title: 'next js', links: [
-            { source: '', done: false },
+            { source: 'https://www.freecodecamp.org/news/the-next-js-handbook/', done: false },
 
 
         ]
     },
     {
         day: 100, title: 'next js', links: [
-            { source: '', done: false },
+            { source: 'https://snipcart.com/blog/next-js-ecommerce-tutorial', done: false },
 
 
         ]

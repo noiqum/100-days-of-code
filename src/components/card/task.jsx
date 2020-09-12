@@ -1,15 +1,35 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { updateTask, getPath } from "../../store/actions/path";
+import ConfettiComponent from "../confetti/confetti";
+import { AnimatePresence } from "framer-motion";
 
-function Task({ task, loginStatus, setTask, user, count, index, getPathDB }) {
+function Task({
+  task,
+  loginStatus,
+  setTask,
+  user,
+  count,
+  index,
+  getPathDB,
+  total,
+}) {
   const [link, setLink] = useState({});
+  const [done, setDone] = useState(false);
   const linkRef = useRef(null);
   useEffect(() => {
     setLink(task);
   }, [task]);
 
   const linkHandler = () => {
+    if (total === index + 1) {
+      if (link.done === false) {
+        setDone(true);
+        setInterval(() => {
+          setDone(false);
+        }, 8000);
+      }
+    }
     setLink({ ...link, done: !link.done });
     setTask(user, count, index);
     getPathDB(user);
@@ -28,6 +48,7 @@ function Task({ task, loginStatus, setTask, user, count, index, getPathDB }) {
           onClick={linkHandler}
         ></label>
       )}
+      <AnimatePresence>{done && <ConfettiComponent />}</AnimatePresence>
     </div>
   );
 }

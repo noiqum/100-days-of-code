@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import { record } from "../../path/path";
 import { checkCardFinish } from "../utils/utils";
 import Loading from "../loading/loading";
+import { useRef } from "react";
 //style=container.scss
 
 function Container({ getPathDB, loginStatus, user, days }) {

@@ -2,6 +2,10 @@ import React from "react";
 import Tasks from "./tasks";
 import { motion } from "framer-motion";
 import { ReactComponent as Twitter } from "../../sass/svg/twitter.svg";
+import { useRef } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+
 //style=card.scss
 
 function Card({ count, tasks, title, finished }) {

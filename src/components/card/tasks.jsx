@@ -7,7 +7,13 @@ function Tasks({ tasks, count }) {
     <div className="tasks">
       {tasks.map((task, index) => {
         return (
-          <Task key={task.index} task={task} count={count} index={index} />
+          <Task
+            key={task.index}
+            task={task}
+            count={count}
+            index={index}
+            total={tasks.length}
+          />
         );
       })}
     </div>

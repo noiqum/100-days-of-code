@@ -37,7 +37,7 @@
   &.done {
     // background-color: rgba(51, 39, 145, 0.4);
     background-color: var(--yellow);
-    transition: background-color 2s;
+    transition: background-color 5s ease;
     & > .card__count {
       color: var(--purple);
     }
