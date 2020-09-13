@@ -6,7 +6,9 @@ const actionTypes = {
     getPath: 'GET_PATH',
     setTask: 'SET_TASK',
     googleSignUp: "GOOGLE_SIGN_UP",
-    signUp: 'SIGN_UP'
+    signUp: 'SIGN_UP',
+    signIn: 'SIGN_IN',
+    registerProcess: 'REGISTER_PROCESS'
 
 }
 

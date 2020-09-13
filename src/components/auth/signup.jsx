@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { ReactComponent as SvgGoogle } from "../../sass/svg/google.svg";
+import { ReactComponent as Spinner } from "../../sass/svg/spinner.svg";
 import { connect } from "react-redux";
 import { googleSign, signUpHandle } from "../../store/actions/auth";
 import { Redirect } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { validate } from "../utils/utils";
 
-function SignUp({ googleLogin, loginStatus, register }) {
+function SignUp({ googleLogin, loginStatus, register, registerProcess }) {
   const [login, setLogin] = useState(false);
 
   const signupHandler = () => {
@@ -99,7 +100,12 @@ function SignUp({ googleLogin, loginStatus, register }) {
           </div>
 
           <div className="signup__form__submit">
-            <input type="submit" value="Register" />
+            <input
+              type="submit"
+              value="Register"
+              disabled={registerProcess}
+            ></input>
+            {registerProcess && <Spinner />}
           </div>
         </form>
       </div>
@@ -108,7 +114,10 @@ function SignUp({ googleLogin, loginStatus, register }) {
 }
 
 const mapState = (state) => {
-  return { loginStatus: state.user.loginStatus };
+  return {
+    loginStatus: state.user.loginStatus,
+    registerProcess: state.user.register,
+  };
 };
 const mapDispatch = (dispatch) => {
   return {

@@ -1,7 +1,7 @@
 import actionTypes from './actionTypes';
 import firebase, { provider } from '../../firebaseConfig/firebaseConfig';
 import { path } from '../../path/path';
-
+import { toast } from 'react-toastify';
 export const googleSignIn = (user) => ({
     type: actionTypes.googleSignIn,
     user
@@ -57,21 +57,51 @@ const signUp = (user) => {
         user
     }
 }
-
+const registerProcess = (bool) => {
+    return {
+        type: actionTypes.registerProcess,
+        bool
+    }
+}
 
 
 export const signUpHandle = (user) => {
     return async dispatch => {
         try {
+            dispatch(registerProcess(true))
             const result = await firebase.auth().createUserWithEmailAndPassword(user.email, user.password);
             const id = result.user.uid;
             const newUser = { displayName: user.displayName, email: user.email, uid: id, path };
             await firebase.firestore().collection('user').doc(id).set({ ...newUser })
+            dispatch(registerProcess(false))
             return dispatch(signUp(newUser))
 
         } catch (error) {
             console.log(error)
+            toast.warning(error.message)
+        }
+    }
+}
 
+const signIn = (user) => {
+    return {
+        type: actionTypes.signIn,
+        user
+    }
+}
+
+export const signInHandle = (user) => {
+    return async dispatch => {
+        try {
+            const result = await firebase.auth().signInWithEmailAndPassword(user.email, user.password);
+            const id = result.user.uid;
+
+            const userDB = await firebase.firestore().doc(`user/${id}`).get();
+
+            return dispatch(signIn(userDB.data()))
+        } catch (error) {
+            console.log(error)
+            toast.warning(error.message)
         }
     }
 }

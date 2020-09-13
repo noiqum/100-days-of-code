@@ -27,7 +27,7 @@ function Task({
         setDone(true);
         setInterval(() => {
           setDone(false);
-        }, 8000);
+        }, 6000);
       }
     }
     setLink({ ...link, done: !link.done });

@@ -5,7 +5,8 @@ const initialstate = {
     user: {
         uid: 'default'
     },
-    loginStatus: false
+    loginStatus: false,
+    register: false
 
 }
 
@@ -30,6 +31,18 @@ const userReducer = (state = initialstate, action) => {
                 ...state,
                 user: {},
                 loginStatus: false
+            }
+        case actionTypes.signIn:
+
+            return {
+                ...state,
+                user: action.user,
+                loginStatus: true
+            }
+        case actionTypes.registerProcess:
+            return {
+                ...state,
+                register: action.bool
             }
         default:
             return state;

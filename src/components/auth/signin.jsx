@@ -1,34 +1,28 @@
 import React from "react";
 import { ReactComponent as SvgAuth } from "../../sass/svg/auth.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ReactComponent as SvgGoogle } from "../../sass/svg/google.svg";
 import { connect } from "react-redux";
-import { googleSign } from "../../store/actions/auth";
-import { useEffect } from "react";
+import { googleSign, signInHandle } from "../../store/actions/auth";
 import { Redirect } from "react-router-dom";
-//style=signin.scss
-function SignIn({ googleLogin, login }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loginStatus, setLoginStatus] = useState(false);
 
+//style=signin.scss
+function SignIn({ googleLogin, login, signin }) {
+  const signinHandler = (e) => {
+    e.preventDefault();
+    signin(user);
+  };
+  const [loginStatus, setLoginStatus] = useState(false);
+  const [user, setUser] = useState({});
+
+  const changeHandler = (e) => {
+    e.persist();
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
   useEffect(() => {
     setLoginStatus(login);
   }, [login]);
-  const inputHandler = (e) => {
-    switch (e.target.name) {
-      case "email":
-        return setEmail(e.target.value);
-      case "password":
-        return setPassword(e.target.value);
 
-      default:
-        break;
-    }
-  };
-  const submitHandler = (e) => {
-    e.preventDefault();
-  };
   const googleHandler = () => {
     googleLogin();
   };
@@ -42,7 +36,7 @@ function SignIn({ googleLogin, login }) {
 
         <div className="signin__img"></div>
 
-        <form className="signin__form" onSubmit={submitHandler}>
+        <form className="signin__form" onSubmit={signinHandler}>
           <button className="signin__form__google" onClick={googleHandler}>
             <SvgGoogle />
             <span>Sign In With Google</span>
@@ -56,8 +50,8 @@ function SignIn({ googleLogin, login }) {
               name="email"
               type="email"
               className="signin__form__input-email"
-              value={email}
-              onChange={inputHandler}
+              onChange={changeHandler}
+              required
             />
           </div>
           <div>
@@ -67,9 +61,9 @@ function SignIn({ googleLogin, login }) {
             <input
               type="password"
               name="password"
-              onChange={inputHandler}
+              onChange={changeHandler}
               className="signin__form__input-password"
-              value={password}
+              required
             />
           </div>
           <div>
@@ -92,6 +86,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     googleLogin: () => {
       dispatch(googleSign());
+    },
+    signin: (user) => {
+      dispatch(signInHandle(user));
     },
   };
 };

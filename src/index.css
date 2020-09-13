@@ -452,6 +452,9 @@
         .signup__form input[type="submit"] {
           width: max-content;
           padding: 1rem 1.8rem; } }
+      .signup__form input[type="submit"] + svg {
+        animation: spin 2s linear infinite;
+        fill: var(--white); }
     .signup__form__google > button {
       cursor: pointer;
       width: 100%;
@@ -488,6 +491,12 @@
       @media screen and (min-width: 1260px) {
         .signup__form > span {
           font-size: 2.3rem; } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 .loading {
   display: flex;

@@ -30,9 +30,7 @@ export const getPath = (user) => {
         }
     }
 }
-const setTask = () => ({
-    type: actionTypes.setTask
-})
+
 export const updateTask = (user, day, linkIndex) => {
     return async dispatch => {
         try {
@@ -51,7 +49,7 @@ export const updateTask = (user, day, linkIndex) => {
             path.splice((day - 1), 1, updatedPathItem)
             await firebase.firestore().doc(`user/${user}`).update({ path: path })
             return dispatch(getPath(user))
-            // return dispatch(setTask())
+
         } catch (error) {
             console.log(error)
         }
